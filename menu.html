@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Green Bites</title>
+  <link href="https://fonts.googleapis.com/css2?family=El+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'El Garamond', serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #4CAF50;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header img {
+      width: 50px;
+      height: auto;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style-type: none;
+      padding: 10px;
+      background-color: #333;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+    nav ul li a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 30px;
+      text-align: center;
+    }
+    .menu-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .menu-item {
+      text-align: center;
+      width: 250px;
+      margin: 10px;
+    }
+    .menu-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .price {
+      font-weight: bold;
+      color: #4CAF50;
+    }
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .menu-list div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .menu-list h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .menu-list p {
+      margin: 0;
+      font-size: 1rem;
+      color: #777;
+    }
+
+    /* New Styles for Larger Vegan Combo Section */
+    .combo-container {
+      text-align: center;
+      background-color: #f0f8f0;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .combo-container h3 {
+      font-size: 2.5rem;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    .combo-container p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .combo-container ul {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .combo-container ul li {
+      margin: 10px 0;
+    }
+
+    .combo-container .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #FF6347;
+    }
+
+    .combo-container img {
+      width: 90%;
+      max-width: 600px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Add logo on both sides -->
+    <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo">
+    <h1>Our Menu</h1>
+    <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <section id="menu">
+    <!-- Most Popular Section using only the vegan menu image for all dishes -->
+    <h2>Most Popular</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/Vegan Menu.jpg" alt="Vegan Dishes">
+        <h3>Vegan Combo</h3>
+        <div class="combo-container">
+          <h3>Vegan Combo</h3>
+          <p>A combo of 4 delicious vegan dishes:</p>
+          <ul>
+            <li>Vegan Spring Rolls</li>
+            <li>Vegan Quinoa Bowl</li>
+            <li>Vegan Noodles</li>
+            <li>Fruit Cheesecake</li>
+          </ul>
+          <p class="price">Combo Price: $28.99</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seasonal Dish Specials Section -->
+    <h2>Seasonal Dish Specials</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/Seasonal Dishes.jpg" alt="Seasonal Pumpkin Spice Combo">
+        <h3>Pumpkin Spice Combo</h3>
+        <p>A warm pumpkin spice latte paired with a grilled fruit sandwich. Perfect for fall!</p>
+        <p class="price">$9.99</p>
+      </div>
+    </div>
+
+    <!-- Menu Items List -->
+    <h2>Menu Items</h2>
+    <div class="menu-list">
+      <!-- Appetizers Section -->
+      <h3>Appetizers</h3>
+      <div>
+        <p>Vegan Spring Rolls</p>
+        <p class="price">$8.99</p>
+      </div>
+      <div>
+        <p>Stuffed Mushrooms</p>
+        <p class="price">$7.49</p>
+      </div>
+      <div>
+        <p>Sweet Potato Fries</p>
+        <p class="price">$5.99</p>
+      </div>
+      <div>
+        <p>Spinach Artichoke Dip</p>
+        <p class="price">$8.49</p>
+      </div>
+
+      <!-- Main Courses Section -->
+      <h3>Main Courses</h3>
+      <div>
+        <p>Vegan Quinoa Bowl</p>
+        <p class="price">$11.29</p>
+      </div>
+      <div>
+        <p>Vegan Noodles</p>
+        <p class="price">$9.99</p>
+      </div>
+      <div>
+        <p>Grilled Tofu Sandwich</p>
+        <p class="price">$10.49</p>
+      </div>
+      <div>
+        <p>Veggie Stir Fry</p>
+        <p class="price">$12.99</p>
+      </div>
+      <div>
+        <p>Chickpea Salad</p>
+        <p class="price">$8.99</p>
+      </div>
+
+      <!-- Desserts Section -->
+      <h3>Desserts</h3>
+      <div>
+        <p>Fruit Cheesecake</p>
+        <p class="price">$6.99</p>
+      </div>
+      <div>
+        <p>Chocolate Avocado Mousse</p>
+        <p class="price">$5.49</p>
+      </div>
+      <div>
+        <p>Vegan Brownies</p>
+        <p class="price">$4.99</p>
+      </div>
+      <div>
+        <p>Apple Cinnamon Crisp</p>
+        <p class="price">$6.49</p>
+      </div>
+      <div>
+        <p>Vegan Banana Bread</p>
+        <p class="price">$5.99</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Green Bites. All rights reserved.</p>
+  </footer>
+</body>
+</html>
