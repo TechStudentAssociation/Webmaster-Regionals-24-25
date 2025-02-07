@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Green Bites</title>
+  <title>Contact Us - Leaf & Ladle</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -35,31 +35,37 @@
 
     /* Navigation Bar Styling */
     nav {
-      background-color: #333;
-      color: white;
       padding: 10px 0;
+      background-color: #66bb6a;
     }
 
     nav ul {
-      list-style: none;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style-type: none;
       margin: 0;
       padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin: 0 20px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 18px;
+      padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     nav ul li a:hover {
-      text-decoration: underline;
+      background-color: #ddd;
+      color: black;
+    }
+
+    .nav-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin: 10px 0;
     }
 
     /* Contact Section */
@@ -148,12 +154,15 @@
       <li><a href="about.html">About Us</a></li>
       <li><a href="sustainability.html">Sustainability</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="advice.html">Personalized Diet</a></li>
+      <li><a href="documentation.html">TSA Documentation</a></li>
     </ul>
+    <div class="nav-divider"></div>
   </nav>
 
   <section id="contact">
     <h2>Reservations and Inquiries</h2>
-    <form action="thankyou.html" method="GET">
+    <form action="contactredirect.html" method="GET">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -168,7 +177,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2023 Green Bites. All rights reserved.</p>
+    <p>&copy; 2025 Leaf & Ladle. All rights reserved.</p>
   </footer>
 </body>
 </html>

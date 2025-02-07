@@ -3,73 +3,249 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Green Bites - Vegan Restaurant</title>
+  <title>Leaf & Ladle - Vegan Restaurant</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Full-page video background */
-    #video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensure it covers the entire screen without stretching */
-      z-index: -1; /* Make sure content appears above the video */
-    }
-
-    /* Apply EB Garamond font to the entire body */
+    /* Global styling */
     body {
       font-family: 'EB Garamond', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #f0f8f8, #ffffff);
     }
 
-    /* Apply the font to form elements */
-    #newsletter input[type="email"], 
-    #newsletter button {
-      font-family: 'EB Garamond', serif;
+    /* Header and footer styling */
+    header {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #4CAF50;
+      color: white;
     }
 
-    /* Apply font to header, navigation, footer, and other text */
-    header, nav, footer, section {
-      font-family: 'EB Garamond', serif;
+    .logo {
+      width: 150px;
+      height: auto;
     }
 
-    /* Styling for the email input and subscribe button */
-    #newsletter input[type="email"], 
+    footer {
+      background-color: #354131;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Navigation bar */
+    nav {
+      background-color: #4CAF50;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .nav-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin: 10px 0;
+    }
+
+    /* Section styling */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #raw-to-cooked {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+      border-top: 2px solid #6B8E23;
+      border-bottom: 2px solid #6B8E23;
+    }
+
+    #reviews {
+      background-color: #ffffff;
+      padding: 40px 20px;
+    }
+
+    #newsletter {
+      background-color: #f2f7f2;
+      padding: 40px 20px;
+    }
+
+    /* Aesthetic layout adjustments */
+    .comparison-slider {
+      position: relative;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .comparison-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .comparison-images img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+      display: none;
+    }
+
+    .comparison-images img.active {
+      display: block;
+    }
+
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .slider-btn {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 20px;
+      pointer-events: all;
+    }
+
+    .slider-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .cuisine-type {
+      text-align: left;
+      position: absolute;
+      bottom: 10px;
+      left: 250px; /* Adjusted to be more to the left */
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .review {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #newsletter input[type="email"],
     #newsletter button {
       padding: 10px;
       margin-top: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 16px;
+      font-family: 'EB Garamond', serif;
     }
 
-    /* Styling for the header, navigation, and footer */
-    header, nav, footer {
-      z-index: 2;
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Full-page video background */
+    #video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Content background boxes */
+    section {
+      background: rgba(255, 255, 255, 0.8);
+      margin: 20px auto;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 90%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sliders = document.querySelectorAll(".comparison-slider");
+
+      sliders.forEach(slider => {
+        const images = slider.querySelectorAll(".comparison-images img");
+        let currentIndex = 0;
+
+        const showImage = index => {
+          images.forEach((img, i) => {
+            img.classList.toggle("active", i === index);
+          });
+        };
+
+        const prevButton = slider.querySelector(".prev");
+        const nextButton = slider.querySelector(".next");
+
+        prevButton.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showImage(currentIndex);
+        });
+
+        nextButton.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % images.length;
+          showImage(currentIndex);
+        });
+
+        showImage(currentIndex);
+      });
+    });
+  </script>
 </head>
 <body>
-  <!-- Full-screen Video Background -->
-  <video id="video-background" autoplay loop muted>
-    <source src="images/Veggie Video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+
+  <video id="video-bg" autoplay loop muted>
+    <source src="images/Sustainable Background Video.mp4" type="video/mp4">
   </video>
 
-  <!-- Start of the header section -->
   <header>
-    <div class="logo-container left">
-      <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo" class="logo">
-    </div>
-    <h1>Welcome to Green Bites</h1>
-    <p class="hero-text">Fresh, Local, and Delicious Vegan Cuisine</p>
-    <div class="logo-container right">
-      <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo" class="logo">
-    </div>
+    <img src="images/TSA Logo Backgroundless.png" alt="Leaf & Ladle Logo" class="logo">
   </header>
 
-  <!-- Navigation section -->
   <nav>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
@@ -77,40 +253,74 @@
       <li><a href="about.html">About Us</a></li>
       <li><a href="sustainability.html">Sustainability</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="advice.html">Personalized Diet</a></li>
+      <li><a href="documentation.html">TSA Documentation</a></li>
     </ul>
+    <div class="nav-divider"></div>
   </nav>
 
   <section id="hero">
     <div class="hero-image">
-      <img src="images/Vegan Dish.jpg" alt="Delicious Vegan Dish">
+      <img src="images/Side.png" alt="Delicious Vegan Dish">
     </div>
   </section>
 
-  <section id="before-after">
-    <h2>From Farm to Table</h2>
+  <section id="raw-to-cooked">
+    <h2>Raw to Cooked</h2>
     <div class="comparison-slider">
-      <img src="images/Before and After Cooking.jpg" alt="Fresh Ingredients">
-      <img src="images/Before and After Cooking 2.jpg" alt="Cooked Dish">
+      <button class="slider-btn prev">&#10094;</button>
+      <div class="comparison-images">
+        <img src="images/Before Risotto.jpg" alt="Before Risotto" class="active">
+        <img src="images/After Risotto.jpg" alt="After Risotto">
+      </div>
+      <button class="slider-btn next">&#10095;</button>
+      <p class="cuisine-type">Italian Cuisine</p>
     </div>
-    <p class="styled-text new-font">Our ingredients are sourced directly from local farms, ensuring the freshest and most sustainable meals.</p>
+
+    <div class="comparison-slider">
+      <button class="slider-btn prev">&#10094;</button>
+      <div class="comparison-images">
+        <img src="images/Before China Eggplant.jpg" alt="Before China Eggplant" class="active">
+        <img src="images/After China Eggplant.jpg" alt="After China Eggplant">
+      </div>
+      <button class="slider-btn next">&#10095;</button>
+      <p class="cuisine-type">Chinese Cuisine</p>
+    </div>
+
+    <div class="comparison-slider">
+      <button class="slider-btn prev">&#10094;</button>
+      <div class="comparison-images">
+        <img src="images/Before Panner Tikka.jpg" alt="Before Paneer Tikka" class="active">
+        <img src="images/After Paneer Tikka.jpg" alt="After Paneer Tikka">
+      </div>
+      <button class="slider-btn next">&#10095;</button>
+      <p class="cuisine-type">Indian Cuisine</p>
+    </div>
   </section>
 
-  <section id="reviews" class="centered">
+  <section id="reviews">
     <h2>What Our Customers Say</h2>
     <div class="review-slider">
       <div class="review">
-        <p>"Best vegan experience ever!"</p>
+        <img src="images/Jordan TSA.png" alt="Jordan">
+        <p>"Best vegan experience ever! Highly recommended for anyone passionate about sustainable dining."</p>
         <span>⭐️⭐️⭐️⭐️⭐️ - Jordan L.</span>
       </div>
       <div class="review">
-        <p>"The flavors and sustainability efforts are unmatched."</p>
+        <img src="images/Jamie TSA.png" alt="Jamie">
+        <p>"The flavors and sustainability efforts are unmatched. It feels good knowing I'm supporting eco-friendly practices."</p>
         <span>⭐️⭐️⭐️⭐️⭐️ - Jamie K.</span>
+      </div>
+      <div class="review">
+        <img src="images/Taylor TSA.png" alt="Taylor">
+        <p>"Incredible food and eco-friendly practices! The farm-to-table approach is evident in every bite."</p>
+        <span>⭐️⭐️⭐️⭐️⭐️ - Taylor R.</span>
       </div>
     </div>
   </section>
 
   <section id="newsletter">
-    <h2>Join the Green Bites Movement</h2>
+    <h2>Join the Leaf & Ladle Movement</h2>
     <p class="styled-text">Get exclusive updates, recipes, and sustainability tips!</p>
     <form action="thankyou.html" method="GET">
       <input type="email" name="email" placeholder="Enter your email" required>
@@ -121,19 +331,20 @@
   <footer>
     <div class="footer-container">
       <div class="footer-left">
-        <h3>Green Bites</h3>
+        <h3>Leaf & Ladle</h3>
         <p>Fresh, local, and sustainable vegan cuisine.</p>
       </div>
       <div class="footer-right">
         <div class="footer-logo-container">
-          <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo" class="logo footer-logo">
+          <img src="images/TSA Logo Backgroundless.png" alt="Leaf & Ladle Logo" class="logo footer-logo">
         </div>
         <h3>Contact Us</h3>
-        <p>Email: contact@greenbites.com</p>
+        <p>Email: contact@leafandladle.com</p>
         <p>Phone: (555) 987-6543</p>
       </div>
     </div>
-    <p>&copy; 2023 Green Bites. All rights reserved.</p>
+    <p>&copy; 2025 Leaf & Ladle. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

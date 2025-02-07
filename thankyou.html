@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You - Green Bites</title>
+  <title>Thank You - Leaf & Ladle</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -20,12 +20,22 @@
     header {
       background-color: #66bb6a; /* Green Header */
       color: white;
-      padding: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2rem;
+      flex-grow: 1;
+      text-align: center;
     }
 
     /* Thank You Section */
@@ -36,6 +46,9 @@
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     #thank-you h2 {
@@ -48,14 +61,6 @@
       font-size: 1.2rem;
       color: #666;
       margin-bottom: 30px;
-    }
-
-    /* Logo Styling */
-    #logo {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      margin: 20px auto;
     }
 
     /* Return Button Styling */
@@ -90,21 +95,18 @@
 </head>
 <body>
   <header>
-    <h1>Green Bites</h1>
+    <img id="logo" src="images/LeafnLadel Logo.webp" alt="Leaf & Ladle Logo">
+    <h1>Thank You!</h1>
+    <a href="index.html" class="return-btn">Return to Home</a>
   </header>
 
   <section id="thank-you">
-    <h2>Thank You!</h2>
-    <p>We appreciate your message. We'll get back to you as soon as possible!</p>
-    <!-- Logo inserted below the message with correct path -->
-    <img id="logo" src="images/Green Bites Logo.jpg" alt="Green Bites Logo">
-
-    <!-- Return Button -->
-    <a href="index.html" class="return-btn">Return to Home</a>
+    <h2>Thank You for Your Involvement!</h2>
+    <p>We appreciate your encouragment. Get ready to recieve emails!</p>
   </section>
 
   <footer>
-    <p>&copy; 2023 Green Bites. All rights reserved.</p>
+    <p>&copy; 2025 Leaf & Ladle. All rights reserved.</p>
   </footer>
 </body>
 </html>

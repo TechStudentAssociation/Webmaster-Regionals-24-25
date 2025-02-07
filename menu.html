@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu - Green Bites</title>
-  <link href="https://fonts.googleapis.com/css2?family=El+Garamond&display=swap" rel="stylesheet">
+  <title>Menu - Leaf & Ladle</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      font-family: 'El Garamond', serif;
+      font-family: 'EB Garamond', serif;
       background-color: #f9f9f9;
       color: #333;
       margin: 0;
@@ -21,136 +21,279 @@
       padding: 20px;
       background-color: #4CAF50;
       color: white;
+      position: relative;
     }
     header h1 {
       margin: 0;
       font-size: 2rem;
+      text-align: center;
+      flex-grow: 1;
     }
     header img {
       width: 50px;
       height: auto;
     }
+    nav {
+      padding: 10px;
+      background-color: #4CAF50;
+    }
     nav ul {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       list-style-type: none;
-      padding: 10px;
-      background-color: #333;
+      margin: 0;
+      padding: 0;
     }
     nav ul li a {
       color: white;
       text-decoration: none;
       padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
     }
     nav ul li a:hover {
       background-color: #ddd;
       color: black;
+    }
+    .nav-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin: 10px 0;
     }
     h2 {
       font-size: 2rem;
       margin-top: 30px;
       text-align: center;
     }
+    .subtitle {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
     .menu-grid {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin: 30px 0;
+      margin: 30px 20px;
     }
     .menu-item {
       text-align: center;
       width: 250px;
       margin: 10px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .menu-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
     .menu-item img {
       width: 100%;
       height: auto;
       border-radius: 8px;
     }
+    .menu-item h3 {
+      margin: 10px 0;
+      font-size: 1.5rem;
+    }
     .price {
       font-weight: bold;
       color: #4CAF50;
+      margin: 10px 0;
     }
-    .menu-list {
+    .quantity-add {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin: 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .quantity-add input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+      font-family: 'EB Garamond', serif;
+    }
+    .quantity-add button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: 'EB Garamond', serif;
+      transition: background-color 0.3s;
+    }
+    .quantity-add button:hover {
+      background-color: #45a049;
+    }
+    .final-price {
+      margin-top: 10px;
+      color: #555;
+      font-size: 1rem;
+    }
+    .total-section {
+      text-align: center;
+      margin: 30px;
+      font-size: 1.5rem;
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .checkout-button, .cart-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: 'EB Garamond', serif;
+      transition: background-color 0.3s;
+    }
+    .checkout-button:hover, .cart-button:hover {
+      background-color: #45a049;
+    }
+    .summary-section {
+      display: none;
       padding: 20px;
       background-color: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      margin: 20px;
     }
-    .menu-list div {
+    .summary-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .summary-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .summary-section ul li {
       display: flex;
       justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
     }
-    .menu-list h3 {
-      margin: 0;
-      font-size: 1.2rem;
+    .summary-section ul li:last-child {
+      border-bottom: none;
     }
-    .menu-list p {
-      margin: 0;
-      font-size: 1rem;
-      color: #777;
-    }
-
-    /* New Styles for Larger Vegan Combo Section */
     .combo-container {
       text-align: center;
       background-color: #f0f8f0;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      margin-bottom: 40px;
-    }
-
-    .combo-container h3 {
-      font-size: 2.5rem;
-      color: #4CAF50;
       margin-bottom: 20px;
+      width: 450px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .combo-container p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 15px;
+    .combo-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
-
-    .combo-container ul {
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 20px;
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .combo-container ul li {
-      margin: 10px 0;
-    }
-
-    .combo-container .price {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #FF6347;
-    }
-
     .combo-container img {
-      width: 90%;
+      width: 100%;
       max-width: 600px;
-      margin: 20px 0;
       border-radius: 10px;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuItems = document.querySelectorAll('.menu-item, .combo-container');
+      const totalPriceElement = document.getElementById('total-price');
+      const checkoutButton = document.querySelector('.checkout-button');
+      const cartButton = document.querySelector('.cart-button');
+      const summarySection = document.querySelector('.summary-section');
+      const summaryList = document.querySelector('.summary-section ul');
+      const summaryTotal = document.querySelector('.summary-section .total-price');
+
+      const updateFinalPrice = (item, quantityInput) => {
+        const quantity = parseInt(quantityInput.value);
+        const unitPrice = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+        const finalPrice = (quantity * unitPrice).toFixed(2);
+        let finalPriceElement = item.querySelector('.final-price');
+        if (!finalPriceElement) {
+          finalPriceElement = document.createElement('div');
+          finalPriceElement.classList.add('final-price');
+          item.appendChild(finalPriceElement);
+        }
+        finalPriceElement.textContent = `Final Price: $${finalPrice}`;
+      };
+
+      const updateTotalPrice = () => {
+        let totalPrice = 0;
+        menuItems.forEach(item => {
+          const quantity = parseInt(item.querySelector('input[type="number"]').value);
+          const unitPrice = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+          totalPrice += quantity * unitPrice;
+        });
+        totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+      };
+
+      menuItems.forEach(item => {
+        const quantityInput = item.querySelector('input[type="number"]');
+        quantityInput.addEventListener('input', () => {
+          updateFinalPrice(item, quantityInput);
+          updateTotalPrice();
+        });
+      });
+
+      cartButton.addEventListener('click', () => {
+        summaryList.innerHTML = '';
+        let totalPrice = 0;
+        menuItems.forEach(item => {
+          const quantity = parseInt(item.querySelector('input[type="number"]').value);
+          if (quantity > 0) {
+            const name = item.querySelector('h3').textContent;
+            const unitPrice = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+            const finalPrice = (quantity * unitPrice).toFixed(2);
+            totalPrice += parseFloat(finalPrice);
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<span>${name} x${quantity}</span><span>$${finalPrice}</span>`;
+            summaryList.appendChild(listItem);
+          }
+        });
+        summaryTotal.textContent = `Total: $${totalPrice.toFixed(2)}`;
+        summarySection.style.display = 'block';
+      });
+
+      checkoutButton.addEventListener('click', () => {
+        let cartItems = [];
+        let totalPrice = 0;
+        menuItems.forEach(item => {
+          const quantity = parseInt(item.querySelector('input[type="number"]').value);
+          if (quantity > 0) {
+            const name = item.querySelector('h3').textContent;
+            const unitPrice = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+            cartItems.push({ name, unitPrice, quantity });
+            totalPrice += unitPrice * quantity;
+          }
+        });
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('totalPrice', totalPrice.toFixed(2));
+        window.location.href = 'checkout.html';
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
-    <!-- Add logo on both sides -->
-    <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo">
+    <img src="images/TSA Logo Backgroundless.png" alt="Leaf & Ladle Logo">
     <h1>Our Menu</h1>
-    <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo">
+    <img src="images/TSA Logo Backgroundless.png" alt="Leaf & Ladle Logo">
   </header>
 
   <nav>
@@ -160,113 +303,203 @@
       <li><a href="about.html">About Us</a></li>
       <li><a href="sustainability.html">Sustainability</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="advice.html">Personalized Diet</a></li>
+      <li><a href="documentation.html">TSA Documentation</a></li>
     </ul>
+    <div class="nav-divider"></div>
   </nav>
 
-  <section id="menu">
-    <!-- Most Popular Section using only the vegan menu image for all dishes -->
-    <h2>Most Popular</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="images/Vegan Menu.jpg" alt="Vegan Dishes">
-        <h3>Vegan Combo</h3>
-        <div class="combo-container">
-          <h3>Vegan Combo</h3>
-          <p>A combo of 4 delicious vegan dishes:</p>
-          <ul>
-            <li>Vegan Spring Rolls</li>
-            <li>Vegan Quinoa Bowl</li>
-            <li>Vegan Noodles</li>
-            <li>Fruit Cheesecake</li>
-          </ul>
-          <p class="price">Combo Price: $28.99</p>
-        </div>
-      </div>
-    </div>
+  <section id="menu-header">
+    <h2></h2>
+    <p class="subtitle">100% Vegan and Vegetarian Options</p>
+  </section>
 
-    <!-- Seasonal Dish Specials Section -->
-    <h2>Seasonal Dish Specials</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
+  <section id="specials">
+    <!-- Most Popular and Seasonal Dish Specials Section -->
+    <div class="special-section" style="display: flex; justify-content: center; gap: 20px;">
+      <div class="combo-container">
+        <img src="images/Vegan Menu.jpg" alt="Vegan Combo">
+        <h3>Vegan Combo</h3>
+        <p>A combo of 4 delicious vegan dishes:</p>
+        <ul>
+          <li>Spring Rolls</li>
+          <li>Quinoa Bowl</li>
+          <li>Noodles</li>
+          <li>Fruity Cheesecake</li>
+        </ul>
+        <p class="price">$28.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="combo-container">
         <img src="images/Seasonal Dishes.jpg" alt="Seasonal Pumpkin Spice Combo">
         <h3>Pumpkin Spice Combo</h3>
         <p>A warm pumpkin spice latte paired with a grilled fruit sandwich. Perfect for fall!</p>
+        <ul>
+          <li>Pumpkin Spice Latte</li>
+          <li>Grilled Fruit Sandwich</li>
+        </ul>
         <p class="price">$9.99</p>
-      </div>
-    </div>
-
-    <!-- Menu Items List -->
-    <h2>Menu Items</h2>
-    <div class="menu-list">
-      <!-- Appetizers Section -->
-      <h3>Appetizers</h3>
-      <div>
-        <p>Vegan Spring Rolls</p>
-        <p class="price">$8.99</p>
-      </div>
-      <div>
-        <p>Stuffed Mushrooms</p>
-        <p class="price">$7.49</p>
-      </div>
-      <div>
-        <p>Sweet Potato Fries</p>
-        <p class="price">$5.99</p>
-      </div>
-      <div>
-        <p>Spinach Artichoke Dip</p>
-        <p class="price">$8.49</p>
-      </div>
-
-      <!-- Main Courses Section -->
-      <h3>Main Courses</h3>
-      <div>
-        <p>Vegan Quinoa Bowl</p>
-        <p class="price">$11.29</p>
-      </div>
-      <div>
-        <p>Vegan Noodles</p>
-        <p class="price">$9.99</p>
-      </div>
-      <div>
-        <p>Grilled Tofu Sandwich</p>
-        <p class="price">$10.49</p>
-      </div>
-      <div>
-        <p>Veggie Stir Fry</p>
-        <p class="price">$12.99</p>
-      </div>
-      <div>
-        <p>Chickpea Salad</p>
-        <p class="price">$8.99</p>
-      </div>
-
-      <!-- Desserts Section -->
-      <h3>Desserts</h3>
-      <div>
-        <p>Fruit Cheesecake</p>
-        <p class="price">$6.99</p>
-      </div>
-      <div>
-        <p>Chocolate Avocado Mousse</p>
-        <p class="price">$5.49</p>
-      </div>
-      <div>
-        <p>Vegan Brownies</p>
-        <p class="price">$4.99</p>
-      </div>
-      <div>
-        <p>Apple Cinnamon Crisp</p>
-        <p class="price">$6.49</p>
-      </div>
-      <div>
-        <p>Vegan Banana Bread</p>
-        <p class="price">$5.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
       </div>
     </div>
   </section>
 
+  <section id="appetizers">
+    <!-- Appetizers Section -->
+    <h2>Appetizers</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/Vegan Spring Rolls.jpg" alt="Spring Rolls">
+        <h3>Spring Rolls</h3>
+        <p class="price">$8.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Stuffed Mushrooms.png" alt="Stuffed Mushrooms">
+        <h3>Stuffed Mushrooms</h3>
+        <p class="price">$7.49</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Sweet Potato Fries.jpg" alt="Sweet Potato Fries">
+        <h3>Sweet Potato Fries</h3>
+        <p class="price">$5.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Spinach Artichoke Dip.jpg" alt="Spinach Artichoke Dip">
+        <h3>Spinach Artichoke Dip</h3>
+        <p class="price">$8.49</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="main-courses">
+    <!-- Main Courses Section -->
+    <h2>Main Courses</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/Vegan Quinoa Bowl.jpg" alt="Quinoa Bowl">
+        <h3>Quinoa Bowl</h3>
+        <p class="price">$11.29</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Noodles.jpg" alt="Noodles">
+        <h3>Noodles</h3>
+        <p class="price">$9.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Grilled Tofu Sandwich.jpg" alt="Grilled Tofu Sandwich">
+        <h3>Grilled Tofu Sandwich</h3>
+        <p class="price">$10.49</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Veggie Stir Fry.jpg" alt="Veggie Stir Fry">
+        <h3>Veggie Stir Fry</h3>
+        <p class="price">$12.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Chickpea Salad.jpg" alt="Chickpea Salad">
+        <h3>Chickpea Salad</h3>
+        <p class="price">$8.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+        <div class="final-price"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="desserts">
+    <!-- Desserts Section -->
+    <h2>Desserts</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/Vegan Fruity Cheesecake.jpg" alt="Fruity Cheesecake">
+        <h3>Fruity Cheesecake</h3>
+        <p class="price">$6.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Chocolate Avocado Pudding.png" alt="Chocolate Avocado Pudding">
+        <h3>Chocolate Avocado Pudding</h3>
+        <p class="price">$5.49</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Brownies.jpg" alt="Vegan Brownies">
+        <h3>Vegan Brownies</h3>
+        <p class="price">$4.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Vegan Banana Chocolate Bread.jpg" alt="Banana Chocolate Bread">
+        <h3>Banana Chocolate Bread</h3>
+        <p class="price">$5.99</p>
+        <div class="quantity-add">
+          <input type="number" min="0" value="0">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="total-section">
+    <p id="total-price">Total Price: $0.00</p>
+    <div class="action-buttons">
+      <button class="cart-button">Check Cart</button>
+      <button class="checkout-button">Checkout</button>
+    </div>
+  </section>
+
+  <section class="summary-section">
+    <h2>Order Summary</h2>
+    <ul></ul>
+    <p class="total-price"></p>
+  </section>
+
   <footer>
-    <p>&copy; 2023 Green Bites. All rights reserved.</p>
+    <p>&copy; 2025 Leaf & Ladle. All rights reserved.</p>
   </footer>
 </body>
 </html>

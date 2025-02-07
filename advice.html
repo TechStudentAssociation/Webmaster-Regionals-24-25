@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Vegetarian Diet Planner - Leaf & Ladle</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <style>
+    /* General Body Styling */
+    body {
+      font-family: 'EB Garamond', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      text-align: center;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #66bb6a; /* Green Header */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    /* Try It Out Section */
+    #try-it-out {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    #try-it-out h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    #try-it-out form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #try-it-out form label {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: left;
+    }
+
+    #try-it-out form input, #try-it-out form select {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: 'EB Garamond', serif;
+      width: 100%;
+    }
+
+    #try-it-out form button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: 'EB Garamond', serif;
+    }
+
+    #try-it-out form button:hover {
+      background-color: #388e3c;
+    }
+
+    .meal-plan {
+      text-align: left;
+      margin-top: 30px;
+    }
+
+    .meal-card {
+      background: #f8f8f8;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+
+    .nutrition-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 10px 0;
+      padding: 10px;
+      background: white;
+      border-radius: 4px;
+    }
+
+    .benefits-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: #e8f5e9;
+      border-radius: 8px;
+    }
+
+    .exercise-suggestions {
+      margin-top: 20px;
+    }
+
+    .notes {
+      margin-top: 20px;
+      padding: 10px;
+      background: #fff3cd;
+      border-radius: 5px;
+      border: 1px solid #ffeeba;
+      text-align: left;
+    }
+
+    /* Navigation Bar */
+    nav {
+      padding: 10px 0;
+      background-color: #66bb6a;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .nav-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img id="logo" src="images/LeafnLadel Logo.webp" alt="Leaf & Ladle Logo">
+    <h1>Personalized Vegetarian Diet Planner</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="advice.html#try-it-out">Try It Out</a></li>
+      <li><a href="documentation.html">TSA Documentation</a></li>
+    </ul>
+    <div class="nav-divider"></div>
+  </nav>
+
+  <section id="try-it-out">
+    <h2>Try It Out</h2>
+    <form id="dietForm">
+      <label for="age">Age</label>
+      <input type="number" id="age" min="16" required>
+
+      <label for="weight-lb">Weight (lbs)</label>
+      <input type="number" id="weight-lb" step="0.1" required>
+
+      <label for="height-inch">Height (inches)</label>
+      <input type="number" id="height-inch" required>
+
+      <label for="activity-level">Activity Level</label>
+      <select id="activity-level" required>
+        <option value="1.2">Sedentary</option>
+        <option value="1.375">Light Exercise</option>
+        <option value="1.55">Moderate Exercise</option>
+        <option value="1.725">Active</option>
+        <option value="1.9">Very Active</option>
+      </select>
+
+      <button type="submit">Generate Plan</button>
+    </form>
+
+    <div id="results" style="display: none;">
+      <div class="meal-plan">
+        <h3>Daily Nutritional Targets</h3>
+        <div id="nutritionTargets"></div>
+
+        <h3>Your Personalized Meal Plan</h3>
+        <div id="mealDetails"></div>
+      </div>
+
+      <div class="benefits-section">
+        <h3>Why Vegetarian?</h3>
+        <p>A plant-based diet offers numerous health benefits, including:</p>
+        <ul>
+          <li>Lower risk of heart disease</li>
+          <li>Better weight management</li>
+          <li>Improved digestion</li>
+          <li>Reduced inflammation</li>
+        </ul>
+      </div>
+
+      <div class="exercise-suggestions">
+        <h3>Exercise Recommendations</h3>
+        <div id="exerciseTips"></div>
+      </div>
+
+      <div class="notes">
+        <h4>Note:</h4>
+        <p>This calculator is suitable for individuals aged 16 and above. It is not intended for children or those with specific medical conditions. Please consult a healthcare provider for personalized advice.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Leaf & Ladle. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const mealBank = {
+      underweight: {
+        breakfast: {
+          name: "Spring Rolls",
+          description: "Delicious vegan spring rolls with a tangy dipping sauce.",
+          nutrition: {cal: 200, protein: 4, carbs: 40, fat: 2},
+          ingredients: "Rice paper, vegetables, tofu, dipping sauce"
+        },
+        lunch: {
+          name: "Quinoa Bowl",
+          description: "A nutritious bowl of quinoa with assorted vegetables.",
+          nutrition: {cal: 600, protein: 18, carbs: 85, fat: 20},
+          ingredients: "Quinoa, vegetables, olive oil, lemon juice"
+        },
+        dinner: {
+          name: "Veggie Stir Fry",
+          description: "A colorful stir fry with tofu and fresh vegetables.",
+          nutrition: {cal: 550, protein: 20, carbs: 70, fat: 18},
+          ingredients: "Tofu, bell peppers, broccoli, soy sauce, sesame oil"
+        },
+        snacks: [
+          {
+            name: "Fruity Cheesecake",
+            description: "A delightful vegan cheesecake with a fruity topping.",
+            nutrition: {cal: 350, protein: 6, carbs: 50, fat: 15}
+          },
+          {
+            name: "Smoothie",
+            description: "Banana, peanut butter, and almond milk.",
+            nutrition: {cal: 350, protein: 10, carbs: 40, fat: 15}
+          }
+        ]
+      },
+      normal: {
+        breakfast: {
+          name: "Berry Smoothie Bowl",
+          description: "Thick smoothie topped with granola and fresh fruit.",
+          nutrition: {cal: 400, protein: 15, carbs: 55, fat: 12},
+          ingredients: "Frozen berries, banana, almond milk, granola"
+        },
+        lunch: {
+          name: "Chickpea Salad",
+          description: "A protein-packed chickpea salad with fresh vegetables.",
+          nutrition: {cal: 350, protein: 12, carbs: 40, fat: 15},
+          ingredients: "Chickpeas, mixed greens, tomatoes, cucumber, olive oil, lemon juice"
+        },
+        dinner: {
+          name: "Grilled Tofu Sandwich",
+          description: "A savory grilled tofu sandwich with fresh vegetables.",
+          nutrition: {cal: 500, protein: 20, carbs: 60, fat: 18},
+          ingredients: "Tofu, whole grain bread, vegetables, vegan mayo"
+        },
+        snacks: [
+          {
+            name: "Sweet Potato Fries",
+            description: "Crispy sweet potato fries with a hint of paprika.",
+            nutrition: {cal: 250, protein: 2, carbs: 35, fat: 10}
+          },
+          {
+            name: "Dark Chocolate and Nuts",
+            description: "Small portion of dark chocolate with almonds.",
+            nutrition: {cal: 200, protein: 4, carbs: 15, fat: 14}
+          }
+        ]
+      }
+    };
+
+    const exerciseTips = {
+      underweight: [
+        "Strength training 3-4 times per week",
+        "Yoga for flexibility and muscle tone",
+        "Include compound exercises like squats and push-ups"
+      ],
+      normal: [
+        "30 minutes of cardio 5 times per week",
+        "Strength training 2-3 times per week",
+        "Incorporate stretching and balance exercises"
+      ]
+    };
+
+    document.getElementById('dietForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get user inputs
+      const age = parseInt(document.getElementById('age').value);
+      const weightLb = parseFloat(document.getElementById('weight-lb').value);
+      const heightIn = parseFloat(document.getElementById('height-inch').value);
+      const activityLevel = parseFloat(document.getElementById('activity-level').value);
+
+      // Convert weight and height to metric units
+      const weightKg = weightLb * 0.453592;
+      const heightCm = heightIn * 2.54;
+
+      // Calculate BMR using Mifflin-St Jeor formula
+      const bmr = 10 * weightKg + 6.25 * heightCm - 5 * age + 5; // for men
+      // const bmr = 10 * weightKg + 6.25 * heightCm - 5 * age - 161; // for women
+
+      // Calculate TDEE
+      const tdee = bmr * activityLevel;
+
+      // Calculate macronutrient breakdown
+      const protein = (tdee * 0.20) / 4;
+      const carbs = (tdee * 0.40) / 4;
+      const fat = (tdee * 0.20) / 9;
+
+      // Determine BMI category
+      const bmi = (weightLb / (heightIn * heightIn)) * 703;
+      const bmiCategory = bmi < 18.5 ? 'underweight' : 
+                         bmi < 25 ? 'normal' : 
+                         bmi < 30 ? 'overweight' : 'obese';
+
+      // Get meal plan
+      const meals = mealBank[bmiCategory];
+      const exercises = exerciseTips[bmiCategory];
+
+      // Display results
+      document.getElementById('results').style.display = 'block';
+      displayNutritionTargets(tdee, protein, carbs, fat);
+      displayMealPlan(meals);
+      displayExerciseTips(exercises);
+    });
+
+    function displayNutritionTargets(tdee, protein, carbs, fat) {
+      const nutritionTargets = document.getElementById('nutritionTargets');
+      nutritionTargets.innerHTML = `
+        <div class="meal-card">
+          <h4>Daily Nutrition Targets</h4>
+          <div class="nutrition-facts">
+            <span>Calories: ${Math.round(tdee)}</span>
+            <span>Protein: ${Math.round(protein)}g</span>
+            <span>Carbs: ${Math.round(carbs)}g</span>
+            <span>Fat: ${Math.round(fat)}g</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function displayMealPlan(meals) {
+      const mealDetails = document.getElementById('mealDetails');
+      mealDetails.innerHTML = `
+        <div class="meal-card">
+          <h4>Breakfast: ${meals.breakfast.name}</h4>
+          <p>${meals.breakfast.description}</p>
+          <p><strong>Ingredients:</strong> ${meals.breakfast.ingredients}</p>
+          <div class="nutrition-facts">
+            <span>${meals.breakfast.nutrition.cal} kcal</span>
+            <span>Protein: ${meals.breakfast.nutrition.protein}g</span>
+            <span>Carbs: ${meals.breakfast.nutrition.carbs}g</span>
+            <span>Fat: ${meals.breakfast.nutrition.fat}g</span>
+          </div>
+        </div>
+        <div class="meal-card">
+          <h4>Lunch: ${meals.lunch.name}</h4>
+          <p>${meals.lunch.description}</p>
+          <p><strong>Ingredients:</strong> ${meals.lunch.ingredients}</p>
+          <div class="nutrition-facts">
+            <span>${meals.lunch.nutrition.cal} kcal</span>
+            <span>Protein: ${meals.lunch.nutrition.protein}g</span>
+            <span>Carbs: ${meals.lunch.nutrition.carbs}g</span>
+            <span>Fat: ${meals.lunch.nutrition.fat}g</span>
+          </div>
+        </div>
+        <div class="meal-card">
+          <h4>Dinner: ${meals.dinner.name}</h4>
+          <p>${meals.dinner.description}</p>
+          <p><strong>Ingredients:</strong> ${meals.dinner.ingredients}</p>
+          <div class="nutrition-facts">
+            <span>${meals.dinner.nutrition.cal} kcal</span>
+            <span>Protein: ${meals.dinner.nutrition.protein}g</span>
+            <span>Carbs: ${meals.dinner.nutrition.carbs}g</span>
+            <span>Fat: ${meals.dinner.nutrition.fat}g</span>
+          </div>
+        </div>
+        <div class="meal-card">
+          <h4>Snack Suggestions</h4>
+          ${meals.snacks.map(snack => `
+            <div>
+              <p><strong>${snack.name}</strong>: ${snack.description}</p>
+              <div class="nutrition-facts">
+                <span>${snack.nutrition.cal} kcal</span>
+                <span>Protein: ${snack.nutrition.protein}g</span>
+                <span>Carbs: ${snack.nutrition.carbs}g</span>
+                <span>Fat: ${snack.nutrition.fat}g</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function displayExerciseTips(exercises) {
+      const exerciseTipsDiv = document.getElementById('exerciseTips');
+      exerciseTipsDiv.innerHTML = `
+        <ul>
+          ${exercises.map(tip => `<li>${tip}</li>`).join('')}
+        </ul>
+      `;
+    }
+  </script>
+</body>
+</html>

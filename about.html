@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Green Bites</title>
+  <title>About Us - Leaf & Ladle</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -22,7 +22,6 @@
     }
     header h1 {
       font-size: 36px;
-      font-family: 'Playfair Display', serif;
       margin: 0;
     }
     header p {
@@ -43,35 +42,50 @@
       right: 20px;
     }
     nav {
-      text-align: center;
-      background-color: #333;
+      padding: 10px 0;
+      background-color: #3c9e5a;
     }
     nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
       list-style-type: none;
       margin: 0;
       padding: 0;
     }
-    nav ul li {
-      display: inline;
-      margin-right: 20px;
-    }
     nav ul li a {
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-size: 18px;
+      padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
     }
     nav ul li a:hover {
-      color: #3c9e5a;
+      background-color: #ddd;
+      color: black;
+    }
+    .nav-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin: 10px 0;
     }
     #about {
       padding: 40px;
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-bottom: 40px;
+      transition: transform 0.3s ease-in-out;
+    }
+    #about:hover {
+      transform: translateY(-10px);
     }
     #about h2 {
       font-size: 32px;
-      font-family: 'Playfair Display', serif;
       color: #3c9e5a;
       margin-bottom: 20px;
     }
@@ -79,43 +93,126 @@
       font-size: 20px;
       line-height: 1.6;
       color: #333;
-      font-family: 'EB Garamond', serif;
+    }
+    .team-section {
+      padding: 40px;
+      text-align: center;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 1100px;
+      margin: 40px auto;
+      transition: transform 0.3s ease-in-out;
+    }
+    .team-section:hover {
+      transform: translateY(-10px);
+    }
+    .team-section h2 {
+      font-size: 32px;
+      color: #3c9e5a;
+      margin-bottom: 40px;
     }
     .team-grid {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin-top: 40px;
+      flex-wrap: wrap;
     }
     .team-member {
       text-align: center;
-      width: 45%;
+      width: 250px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .team-member:hover {
+      transform: translateY(-10px);
     }
     .team-member img {
       width: 100%;
       height: auto;
+      border-radius: 8px;
     }
-    .farm-section {
+    .team-member h3 {
+      font-size: 24px;
+      color: #3c9e5a;
+      margin: 15px 0 10px;
+    }
+    .team-member p {
+      font-size: 16px;
+      color: #555;
+    }
+    .partners-section {
       padding: 40px;
       text-align: center;
       background-color: #f5f5f5;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 1100px;
+      margin: 40px auto;
+      transition: transform 0.3s ease-in-out;
     }
-    .farm-section img {
-      width: 90%;
+    .partners-section:hover {
+      transform: translateY(-10px);
+    }
+    .partners-section h2 {
+      font-size: 32px;
+      color: #3c9e5a;
+      margin-bottom: 40px;
+    }
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .partner {
+      text-align: center;
+      width: 250px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .partner:hover {
+      transform: translateY(-10px);
+    }
+    .partner img {
+      width: 100%;
       height: auto;
-      margin-bottom: 20px;
-      object-fit: cover;
+      border-radius: 8px;
+    }
+    .partner h3 {
+      font-size: 24px;
+      color: #3c9e5a;
+      margin: 15px 0 10px;
+    }
+    .partner p {
+      font-size: 16px;
+      color: #555;
     }
     .results-section {
       padding: 40px;
       text-align: center;
       background-color: #e4f4e1;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 1100px;
+      margin: 40px auto;
+      transition: transform 0.3s ease-in-out;
+    }
+    .results-section:hover {
+      transform: translateY(-10px);
     }
     .results-section img {
-      width: 45%;
+      width: 50%;
       height: auto;
-      margin: 0 20px;
+      margin-bottom: 20px;
       object-fit: cover;
+      border-radius: 8px;
     }
     footer {
       text-align: center;
@@ -123,14 +220,84 @@
       background-color: #333;
       color: white;
     }
+    .quote-section {
+      padding: 40px;
+      text-align: center;
+      background-color: #3c9e5a;
+      color: white;
+      margin: 40px 0;
+    }
+    .quote-section blockquote {
+      font-size: 24px;
+      font-style: italic;
+      margin: 0;
+    }
+    .quote-section cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ddd;
+    }
+    .cta-section {
+      text-align: center;
+      padding: 40px;
+      background-color: #333;
+      color: white;
+      margin: 40px 0;
+    }
+    .cta-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .subscribe-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-family: 'EB Garamond', serif;
+    }
+    .subscribe-container input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 300px;
+      font-family: 'EB Garamond', serif;
+    }
+    .subscribe-container button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      font-family: 'EB Garamond', serif;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .subscribe-container button:hover {
+      background-color: #45a049;
+    }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const subscribeButton = document.querySelector('.subscribe-container button');
+      subscribeButton.addEventListener('click', () => {
+        window.location.href = 'thankyou.html';
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
-    <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo" class="left">
+    <img src="images/TSA Logo Backgroundless.png" alt="Leaf & Ladle Logo" class="left">
     <h1>About Us</h1>
     <p>Our Mission to Make a Difference</p>
-    <img src="images/Green Bites Logo.jpg" alt="Green Bites Logo" class="right">
+    <img src="images/TSA Logo Backgroundless.png" alt="Leaf & Ladle Logo" class="right">
   </header>
 
   <nav>
@@ -140,47 +307,90 @@
       <li><a href="about.html">About Us</a></li>
       <li><a href="sustainability.html">Sustainability</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="advice.html">Personalized Diet</a></li>
+      <li><a href="documentation.html">TSA Documentation</a></li>
     </ul>
+    <div class="nav-divider"></div>
   </nav>
 
   <section id="about">
     <h2>Our Story</h2>
-    <p>At Green Bites, we believe in the transformative power of plant-based cuisine. Founded in 2023, we set out to create a space where food nourishes not only the body but the planet as well. Our mission is to offer fresh, sustainable, and incredibly flavorful dishes that make a lasting impact on your health and the environment.</p>
-    <p>Our journey started with a simple yet powerful idea: to make vegan dining accessible and enjoyable for everyone. We are proud to be a part of a growing movement toward a more sustainable future, where every meal is a step toward healthier living and a healthier planet. Together, we are proving that food can change the world.</p>
+    <p>At Leaf & Ladle, we believe in the transformative power of plant-based cuisine. Founded in 2023, we set out to create a space where food nourishes not only the body but the planet as well. Our mission is to offer fresh, sustainable, and incredibly flavorful dishes that make a lasting impact on your health and the environment.</p>
+    <p>Our core values are rooted in health-conscious eating, sustainability, and the joy of plant-based cuisine. We are committed to sourcing local, organic, and ethically-produced ingredients to ensure the highest quality. We aim to make vegan dining accessible and enjoyable for everyone, proving that food can indeed change the world.</p>
   </section>
 
-  <div class="team-grid">
-    <div class="team-member">
-      <img src="images/Chefs at Work.jpg" alt="Chefs at Work">
-      <h3>Our Chefs</h3>
-      <p>Our talented chefs are passionate about crafting meals that are as good for the planet as they are for you.</p>
+  <section class="team-section">
+    <h2>Our Top Chefs</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="images/Howie Mandel.png" alt="Howie Mandel">
+        <h3>Head Chef<br>Howie Mandel</h3>
+        <p>Howie Mandel oversees all kitchen operations, managing staff and designing menus to ensure the highest quality food and exceptional dining experiences. He maintains efficiency while fostering creativity and excellence in every dish.</p>
+      </div>
+      <div class="team-member">
+        <img src="images/Luis Suarez.png" alt="Luis Suarez">
+        <h3>Sous Chef<br>Luis Suarez</h3>
+        <p>Luis Suarez supervises food preparation and manages kitchen stations, stepping in to assist with cooking and plating as needed. His focus on efficiency and quality ensures that every meal is prepared to perfection.</p>
+      </div>
+      <div class="team-member">
+        <img src="images/Richard Donaldson.png" alt="Richard Donaldson">
+        <h3>Grill Chef<br>Richard Donaldson</h3>
+        <p>Richard Donaldson is our expert Grill Chef, specializing in plant-based dishes. He creates flavorful, well-balanced meals by expertly grilling vegetables and plant proteins, delivering satisfying and innovative dishes.</p>
+      </div>
+      <div class="team-member">
+        <img src="images/Okonkwo Olatunji.jpg" alt="Okonkwo Olatunji">
+        <h3>Pastry Chef<br>Okonkwo Olatunji</h3>
+        <p>Okonkwo Olatunji crafts exquisite desserts and baked goods, blending flavors and textures with artistic presentation. His creations are a perfect harmony of taste and beauty, offering a memorable end to every meal.</p>
+      </div>
     </div>
-    <div class="team-member">
-      <img src="images/Chef Playful Image.jpg" alt="Chef Playful Image">
-      <h3>Our Passion for Food</h3>
-      <p>We pour our heart into every dish, ensuring that each bite is a delightful experience full of flavor and nutrition.</p>
-    </div>
-  </div>
+  </section>
 
-  <section class="farm-section">
-    <h2>Where We Source Our Produce</h2>
-    <p>We believe in supporting local farms to provide the freshest ingredients. By sourcing our produce locally, we help reduce carbon emissions, support small businesses, and ensure that every meal we serve is bursting with flavor and nutrients.</p>
-    <img src="images/Local Farms.jpg" alt="Local Farms">
-    <p>Our partnerships with these local farms guarantee that we always serve the best, ethically-sourced ingredients in every dish.</p>
+  <section class="partners-section">
+    <h2>Our Partner Organizations</h2>
+    <div class="partners-grid">
+      <div class="partner">
+        <img src="images/EcoBite Logo.jpg" alt="EcoBite Logo">
+        <h3>EcoBite</h3>
+        <p>EcoBite is dedicated to providing sustainable food solutions by connecting restaurants with eco-friendly suppliers. Their mission is to reduce the environmental impact of the food industry through innovative practices and partnerships.</p>
+      </div>
+      <div class="partner">
+        <img src="images/Plant Link Logo.jpg" alt="Plant Link Logo">
+        <h3>Plant Link</h3>
+        <p>Plant Link specializes in sourcing high-quality, organic plant-based ingredients. They work closely with farmers to ensure a consistent supply of fresh, nutritious produce while promoting sustainable farming practices.</p>
+      </div>
+      <div class="partner">
+        <img src="images/Green Source Logo.jpg" alt="Green Source Logo">
+        <h3>Green Source</h3>
+        <p>Green Source focuses on reducing food waste and promoting sustainability in the food industry. They provide resources and support to restaurants to help them implement eco-friendly initiatives and reduce their carbon footprint.</p>
+      </div>
+    </div>
   </section>
 
   <section class="results-section">
     <h2>The Results</h2>
     <p>By using locally sourced ingredients, we create meals that are not only sustainable but incredibly delicious. Our vegan dishes are carefully crafted to deliver the perfect balance of flavors while being good for the planet.</p>
-    <div>
-      <img src="images/Vegan Dish.jpg" alt="Vegan Dish">
-      <img src="images/Vegan Dish 2.jpg" alt="Vegan Dish 2">
+    <img src="images/Vegan Dish About.jpg" alt="Vegan Dish">
+    <p>Experience the magic of farm-to-table meals with every bite! Each dish is made with care and the finest ingredients.</p>
+  </section>
+
+  <section class="quote-section">
+    <blockquote>
+      "The future of food is plant-based, and Leaf & Ladle is leading the way."
+    </blockquote>
+    <cite>- Food Critics</cite>
+  </section>
+
+  <section class="cta-section">
+    <h2>Join Our Community</h2>
+    <p>We invite you to join our journey towards a healthier and more sustainable future. Sign up for our newsletter to get the latest updates, exclusive recipes, and special offers.</p>
+    <div class="subscribe-container">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe Now</button>
     </div>
-    <p>Experience the magic of farm-to-table meals with every bite! From our Vegan Dish with Quinoa Rice to the Vegan Salad, each dish is made with care and the finest ingredients.</p>
   </section>
 
   <footer>
-    <p>&copy; 2023 Green Bites. All rights reserved.</p>
+    <p>&copy; 2025 Leaf & Ladle. All rights reserved.</p>
   </footer>
 </body>
 </html>

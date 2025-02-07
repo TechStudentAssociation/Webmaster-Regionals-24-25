@@ -3,75 +3,277 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sustainability - Green Bites</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>Sustainability - Leaf & Ladle</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Content styling */
+    body {
+      font-family: 'EB Garamond', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      text-align: center;
+      padding: 40px;
+      background-color: #3c9e5a;
+      color: white;
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    nav {
+      padding: 10px 0;
+      background-color: #3c9e5a;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav ul li a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .nav-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      margin: 10px 0;
+    }
     .content-wrapper {
-      position: relative;
-      z-index: 1;
       text-align: center;
       padding: 40px 20px;
-      background-color: rgba(255, 255, 255, 0.8); /* Slight opacity for readability */
+      background-color: #fff;
     }
-
-    header, nav, footer {
-      z-index: 2;
+    .process-step {
+      max-width: 1200px;
+      margin: 40px auto;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      position: relative;
+    }
+    .process-step h2 {
+      font-size: 28px;
+      color: #3c9e5a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .process-step img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 8px;
+      margin: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .process-step img:hover {
+      transform: scale(1.05);
+    }
+    .process-step p {
+      font-size: 1rem;
+      color: #333;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .process-step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .process-step:nth-child(odd) {
+      flex-direction: row;
+    }
+    .partners-section, .eco-friendly-section {
+      padding: 40px;
+      text-align: center;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 1100px;
+      margin: 40px auto;
+      transition: transform 0.3s ease-in-out;
+    }
+    .partners-section:hover, .eco-friendly-section:hover {
+      transform: translateY(-10px);
+    }
+    .partners-section h2, .eco-friendly-section h2 {
+      font-size: 32px;
+      color: #3c9e5a;
+      margin-bottom: 40px;
+    }
+    .partners-grid, .eco-friendly-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .partner, .eco-friendly-practice {
+      text-align: center;
+      width: 250px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .partner:hover, .eco-friendly-practice:hover {
+      transform: translateY(-10px);
+    }
+    .partner img, .eco-friendly-practice img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .partner h3, .eco-friendly-practice h3 {
+      font-size: 24px;
+      color: #3c9e5a;
+      margin: 15px 0 10px;
+    }
+    .partner p, .eco-friendly-practice p {
+      font-size: 16px;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <header style="text-align: center;">
+  <header>
     <h1>Sustainability</h1>
     <p>Our Commitment to the Planet</p>
   </header>
 
-  <nav style="text-align: center;">
-    <ul style="list-style: none; padding: 0; margin: 0; background-color: #333; display: inline-block;">
-      <li style="display: inline-block; margin: 0 15px;">
-        <a href="index.html" style="color: white; text-decoration: none; font-size: 1.1rem; padding: 10px;">Home</a>
-      </li>
-      <li style="display: inline-block; margin: 0 15px;">
-        <a href="menu.html" style="color: white; text-decoration: none; font-size: 1.1rem; padding: 10px;">Menu</a>
-      </li>
-      <li style="display: inline-block; margin: 0 15px;">
-        <a href="about.html" style="color: white; text-decoration: none; font-size: 1.1rem; padding: 10px;">About Us</a>
-      </li>
-      <li style="display: inline-block; margin: 0 15px;">
-        <a href="sustainability.html" style="color: white; text-decoration: none; font-size: 1.1rem; padding: 10px;">Sustainability</a>
-      </li>
-      <li style="display: inline-block; margin: 0 15px;">
-        <a href="contact.html" style="color: white; text-decoration: none; font-size: 1.1rem; padding: 10px;">Contact Us</a>
-      </li>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="advice.html">Personalized Diet</a></li>
+      <li><a href="documentation.html">TSA Documentation</a></li>
     </ul>
+    <div class="nav-divider"></div>
   </nav>
 
   <!-- Content Wrapper -->
   <section id="sustainability" class="content-wrapper">
-    <div style="max-width: 1000px; margin: 0 auto;">
-      <h2>Farm-to-Table</h2>
-      <div style="display: inline-block; text-align: center; margin: 20px 0;">
-        <img src="images/Farm to Table Picture.jpg" alt="Farm to Table" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto 20px;">
-        <p style="font-size: 1rem; color: #333; max-width: 800px; margin: 0 auto;">We source all our ingredients from local farms to ensure freshness and reduce our carbon footprint.</p>
+    <div class="process-step">
+      <h2>Step 1: Local Farms</h2>
+      <div>
+        <img src="images/Local Farms.jpg" alt="Local Farms">
+        <img src="images/Fresh Produce.jpg" alt="Fresh Produce">
       </div>
+      <p>All the food grown on the farm is grown without the use of chemicals or pesticides and is 100% natural and fresh.</p>
+    </div>
 
-      <h2>Local Farms</h2>
-      <div style="display: inline-block; text-align: center; margin: 20px 0;">
-        <img src="images/Local Farms.jpg" alt="Local Farms" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto 20px;">
-        <p style="font-size: 1rem; color: #333; max-width: 800px; margin: 0 auto;">We partner with local farms to support the community and promote sustainable agriculture.</p>
+    <div class="process-step">
+      <h2>Step 2: Hand-Picked Quality</h2>
+      <div>
+        <img src="images/Farmer Pick.jpg" alt="Farmer Picking">
+        <img src="images/Farmer Picks.jpg" alt="Farmer Picking">
+        <img src="images/Farmer Inspect.jpg" alt="Farmer Inspecting">
       </div>
+      <p>All our produce is hand-picked by our farmers, ensuring quality. It is also personally inspected to make sure you get the best quality food.</p>
+    </div>
 
-      <h2>Environmental Impact</h2>
-      <div style="display: inline-block; text-align: center; margin: 20px 0;">
-        <img src="images/Impact Image.jpg" alt="Environmental Impact" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto 20px;">
-        <p style="font-size: 1rem; color: #333; max-width: 800px; margin: 0 auto;">Our efforts to minimize waste, use eco-friendly packaging, and reduce water usage help protect the planet for future generations.</p>
+    <div class="process-step">
+      <h2>Step 3: Fresh Delivery</h2>
+      <div>
+        <img src="images/Fruit Loading.jpg" alt="Fruit Loading">
+        <img src="images/Fruit Loadings.jpg" alt="Fruit Loading">
+        <img src="images/Delivery Photo.jpg" alt="Delivery">
+      </div>
+      <p>Our fresh produce is carefully loaded and transported to ensure it reaches you in the best condition.</p>
+    </div>
+
+    <div class="process-step">
+      <h2>Step 4: Preparation by Expert Chefs</h2>
+      <div>
+        <img src="images/Chef Plating.jpg" alt="Chef Plating">
+        <img src="images/Chef Platings.jpg" alt="Chef Plating">
+      </div>
+      <p>Our expert chefs prepare the ingredients with care, creating delicious and healthy dishes for you to enjoy.</p>
+    </div>
+
+    <div class="process-step">
+      <h2>Step 5: Enjoying the Meal</h2>
+      <div>
+        <img src="images/Customer.jpg" alt="Customer Enjoying Meal">
+        <img src="images/Customers.jpg" alt="Customers Enjoying Meal">
+      </div>
+      <p>Our customers enjoy the fresh, delicious, and healthy vegetarian meals that are good for you and the planet.</p>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <h2>Our Partner Farms</h2>
+    <div class="partners-grid">
+      <div class="partner">
+        <img src="images/Family Farm Logo.jpg" alt="Family Farm">
+        <h3>Family Farm</h3>
+        <p>Family Farm is dedicated to sustainable farming practices, ensuring that all produce is grown without chemicals or pesticides.</p>
+      </div>
+      <div class="partner">
+        <img src="images/Farm Fresh Logo.jpg" alt="Farm Fresh">
+        <h3>Farm Fresh</h3>
+        <p>Farm Fresh partners with local farmers to bring you the freshest, most nutritious produce available.</p>
+      </div>
+      <div class="partner">
+        <img src="images/Farm Ranch Logo.jpg" alt="Farm Ranch">
+        <h3>Farm Ranch</h3>
+        <p>Farm Ranch is committed to supporting sustainable agriculture and providing high-quality produce.</p>
+      </div>
+      <div class="partner">
+        <img src="images/Local Grown Logo.jpg" alt="Local Grown">
+        <h3>Local Grown</h3>
+        <p>Local Grown works with small farms to bring you fresh, locally-sourced produce.</p>
       </div>
     </div>
   </section>
 
-  <footer style="text-align: center;">
-    <p>&copy; 2023 Green Bites. All rights reserved.</p>
+  <section class="eco-friendly-section">
+    <h2>Eco-Friendly Practices</h2>
+    <div class="eco-friendly-grid">
+      <div class="eco-friendly-practice">
+        <img src="images/Cloth Sacks.jpg" alt="Cloth Sacks">
+        <h3>Reusable Cloth Sacks</h3>
+        <p>We use reusable cloth sacks to reduce plastic waste and promote sustainable practices.</p>
+      </div>
+      <div class="eco-friendly-practice">
+        <img src="images/Sustainable Packing.jpg" alt="Sustainable Packing">
+        <h3>Sustainable Packaging</h3>
+        <p>Our packaging is made from sustainable materials to minimize environmental impact.</p>
+      </div>
+      <div class="eco-friendly-practice">
+        <img src="images/Sustainable Cups.jpg" alt="Sustainable Cups">
+        <h3>Sustainable Cups</h3>
+        <p>We use sustainable cups that are biodegradable and eco-friendly.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Leaf & Ladle. All rights reserved.</p>
   </footer>
 </body>
 </html>
