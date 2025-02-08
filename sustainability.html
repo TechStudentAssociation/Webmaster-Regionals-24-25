@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sustainability - Leaf & Ladle</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: 'EB Garamond', serif;
@@ -61,42 +60,56 @@
       padding: 40px 20px;
       background-color: #fff;
     }
-    .process-step {
-      max-width: 1200px;
-      margin: 40px auto;
-      display: flex;
-      align-items: center;
-      text-align: left;
-      position: relative;
-    }
-    .process-step h2 {
-      font-size: 28px;
-      color: #3c9e5a;
-      margin-bottom: 20px;
+    .overview {
+      padding: 40px;
+      background-color: #e6ffe6;
       text-align: center;
     }
-    .process-step img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 8px;
-      margin: 20px;
-      transition: transform 0.3s ease-in-out;
+    .overview h2 {
+      font-size: 32px;
+      color: #3c9e5a;
     }
-    .process-step img:hover {
-      transform: scale(1.05);
-    }
-    .process-step p {
-      font-size: 1rem;
+    .overview p {
+      font-size: 16px;
       color: #333;
       max-width: 800px;
       margin: 20px auto;
     }
-    .process-step:nth-child(even) {
-      flex-direction: row-reverse;
+    .accordion {
+      max-width: 1200px;
+      margin: 40px auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
-    .process-step:nth-child(odd) {
-      flex-direction: row;
+    .accordion-item {
+      border-top: 1px solid #ccc;
+    }
+    .accordion-item:first-child {
+      border-top: none;
+    }
+    .accordion-item-header {
+      background-color: #3c9e5a;
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .accordion-item-body {
+      display: none;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .accordion-item-body p {
+      font-size: 16px;
+      color: #333;
+    }
+    .accordion-item-body img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 8px;
+      margin: 20px 0;
     }
     .partners-section, .eco-friendly-section {
       padding: 40px;
@@ -155,6 +168,17 @@
       color: white;
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const accordionHeaders = document.querySelectorAll('.accordion-item-header');
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const body = this.nextElementSibling;
+          body.style.display = body.style.display === 'none' || body.style.display === '' ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -170,58 +194,54 @@
       <li><a href="sustainability.html">Sustainability</a></li>
       <li><a href="contact.html">Contact Us</a></li>
       <li><a href="advice.html">Personalized Diet</a></li>
-      <li><a href="documentation.html">TSA Documentation</a></li>
+      <li><a href="documentation.html">Reference Page</a></li>
     </ul>
     <div class="nav-divider"></div>
   </nav>
 
   <!-- Content Wrapper -->
-  <section id="sustainability" class="content-wrapper">
-    <div class="process-step">
-      <h2>Step 1: Local Farms</h2>
-      <div>
-        <img src="images/Local Farms.jpg" alt="Local Farms">
-        <img src="images/Fresh Produce.jpg" alt="Fresh Produce">
-      </div>
-      <p>All the food grown on the farm is grown without the use of chemicals or pesticides and is 100% natural and fresh.</p>
+  <section class="content-wrapper">
+    <div class="overview">
+      <h2>Overview</h2>
+      <p>At Leaf & Ladle, sustainability is at the core of everything we do. Our commitment to the planet drives us to adopt eco-friendly practices throughout our entire process, from sourcing ingredients to delivering meals to your table. We believe in making a positive impact on the environment and supporting local communities.</p>
     </div>
 
-    <div class="process-step">
-      <h2>Step 2: Hand-Picked Quality</h2>
-      <div>
-        <img src="images/Farmer Pick.jpg" alt="Farmer Picking">
-        <img src="images/Farmer Picks.jpg" alt="Farmer Picking">
-        <img src="images/Farmer Inspect.jpg" alt="Farmer Inspecting">
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-item-header">Step 1: Partnering with Local Farms</div>
+        <div class="accordion-item-body">
+          <img src="images/Local Farms.jpg" alt="Local Farms">
+          <p>We collaborate with local farms that practice sustainable agriculture, ensuring our produce is fresh and environmentally friendly. Sustainable agriculture aims to meet society's food needs without compromising future generations' ability to do the same. This involves techniques that protect the environment, public health, human communities, and animal welfare. For instance, sustainable farming practices can lead to better soil health, water conservation, and biodiversity.</p>
+        </div>
       </div>
-      <p>All our produce is hand-picked by our farmers, ensuring quality. It is also personally inspected to make sure you get the best quality food.</p>
-    </div>
-
-    <div class="process-step">
-      <h2>Step 3: Fresh Delivery</h2>
-      <div>
-        <img src="images/Fruit Loading.jpg" alt="Fruit Loading">
-        <img src="images/Fruit Loadings.jpg" alt="Fruit Loading">
-        <img src="images/Delivery Photo.jpg" alt="Delivery">
+      <div class="accordion-item">
+        <div class="accordion-item-header">Step 2: Hand-Picking Quality Produce</div>
+        <div class="accordion-item-body">
+          <img src="images/Farmer Pick.jpg" alt="Farmer Picking">
+          <p>Our farmers meticulously hand-pick each item, ensuring only the highest quality produce reaches our kitchen. This careful selection process guarantees that our ingredients are fresh, flavorful, and nutritious. By choosing hand-picked produce, we support traditional farming methods that prioritize quality and sustainability.</p>
+        </div>
       </div>
-      <p>Our fresh produce is carefully loaded and transported to ensure it reaches you in the best condition.</p>
-    </div>
-
-    <div class="process-step">
-      <h2>Step 4: Preparation by Expert Chefs</h2>
-      <div>
-        <img src="images/Chef Plating.jpg" alt="Chef Plating">
-        <img src="images/Chef Platings.jpg" alt="Chef Plating">
+      <div class="accordion-item">
+        <div class="accordion-item-header">Step 3: Eco-Friendly Delivery Methods</div>
+        <div class="accordion-item-body">
+          <img src="images/Fruit Loading.jpg" alt="Fruit Loading">
+          <p>We are committed to reducing our carbon footprint by employing eco-friendly delivery methods. This includes using energy-efficient vehicles and optimizing delivery routes to minimize emissions. A 2023 study found that 60% of online consumers are interested in carbon-neutral delivery options, highlighting the growing demand for sustainable practices in the food delivery industry.</p>
+        </div>
       </div>
-      <p>Our expert chefs prepare the ingredients with care, creating delicious and healthy dishes for you to enjoy.</p>
-    </div>
-
-    <div class="process-step">
-      <h2>Step 5: Enjoying the Meal</h2>
-      <div>
-        <img src="images/Customer.jpg" alt="Customer Enjoying Meal">
-        <img src="images/Customers.jpg" alt="Customers Enjoying Meal">
+      <div class="accordion-item">
+        <div class="accordion-item-header">Step 4: Expert Preparation by Our Chefs</div>
+        <div class="accordion-item-body">
+          <img src="images/Chef Plating.jpg" alt="Chef Plating">
+          <p>Our skilled chefs prepare meals using techniques that preserve the nutritional integrity of our ingredients while minimizing waste. By focusing on plant-based dishes, we reduce the environmental impact associated with meat production, such as greenhouse gas emissions and water usage. Sustainable agricultural productivity growth is essential for meeting the challenges facing agricultural and food systems around the world.</p>
+        </div>
       </div>
-      <p>Our customers enjoy the fresh, delicious, and healthy vegetarian meals that are good for you and the planet.</p>
+      <div class="accordion-item">
+        <div class="accordion-item-header">Step 5: Serving Sustainable Meals</div>
+        <div class="accordion-item-body">
+          <img src="images/Customer.jpg" alt="Customer Enjoying Meal">
+          <p>When you enjoy a meal from Leaf & Ladle, you're not only nourishing your body but also supporting sustainable practices. Our commitment to eco-friendly packaging, such as using biodegradable materials and minimizing single-use plastics, ensures that our environmental impact is as low as possible. Over half (56%) of consumers prefer restaurants that use eco-friendly packaging and avoid single-use plastics, reflecting a broader shift towards sustainability in the food industry.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -268,6 +288,16 @@
         <img src="images/Sustainable Cups.jpg" alt="Sustainable Cups">
         <h3>Sustainable Cups</h3>
         <p>We use sustainable cups that are biodegradable and eco-friendly.</p>
+      </div>
+      <div class="eco-friendly-practice">
+        <img src="images/Composting.png" alt="Compost">
+        <h3>Composting</h3>
+        <p>We compost organic waste to reduce landfill waste and create nutrient-rich soil for our partner farms.</p>
+      </div>
+      <div class="eco-friendly-practice">
+        <img src="images/Solar Panels.png" alt="Solar Panels">
+        <h3>Solar Energy</h3>
+        <p>We use solar energy to power our operations, reducing our reliance on fossil fuels and minimizing our carbon footprint.</p>
       </div>
     </div>
   </section>
